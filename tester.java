@@ -2,13 +2,15 @@ public class tester {
 
   public static void main(String[] args) {
 
-    System.out.println("hey hows it goin");
-
-    element elem = new element(5,5,3);
-
-    System.out.println(elem.getData());
-
     sparseMatrix matt = new sparseMatrix();
 
+    matt.setSize(2);
+
+    matt.addElement(0, 0, 1);
+    matt.addElement(1, 1, 3);
+    matt.addElement(1, 0, 1);
+    matt.addElement(0, 1, 1);
+
+    System.out.println(matt.determinant());
   }
 }
