@@ -144,7 +144,8 @@ public class sparseMatrix implements SparseInterface {
 
     for (int i = 0; i < size; i++) {
 
-      det += Math.pow(-1,i)*getElement(0,i)*minor(0,i).determinant();
+      //the formula for the determinant of a matrix, defined recursively
+      det += Math.pow(-1,i) * getElement(0,i) * minor(0,i).determinant();
     }
     return det;
   }
