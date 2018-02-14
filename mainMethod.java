@@ -5,7 +5,7 @@ public class mainMethod {
   public static void main(String[] args) {
 
     Scanner scan = new Scanner(System.in);
-    sparseMatrix mat = new sparseMatrix();
+    SparseMatrix mat = new SparseMatrix();
 
     System.out.print("Enter the size of your matrix: ");
     mat.setSize(scan.nextInt());

@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 import java.util.Iterator;
 
-public class sparseMatrix implements SparseInterface {
+public class SparseMatrix implements SparseInterface {
 
   //private member values
   private int size;
@@ -9,15 +9,16 @@ public class sparseMatrix implements SparseInterface {
 
 
   /* this constructor initializes the list of elements. the size of the
-  sparseMatrix will be set using the setSize() method. */
-  public sparseMatrix() {
+  SparseMatrix will be set using the setSize() method. */
+  public SparseMatrix() {
 
     this.list = new LinkedList<element>();
+    size = 5;
   }
 
 
-  /* this is a constructor used in the minor method to create a new sparseMatrix, initializes the size and the list */
-  public sparseMatrix(int size, LinkedList<element> list) {
+  /* this is a constructor used in the minor method to create a new SparseMatrix, initializes the size and the list */
+  public SparseMatrix(int size, LinkedList<element> list) {
 
     this.size = size;
     this.list = list;
@@ -208,8 +209,8 @@ public class sparseMatrix implements SparseInterface {
       }
     }
 
-    //return a new sparseMatrix with the new size and the new list as the minor
-    return new sparseMatrix(newSize, newList);
+    //return a new SparseMatrix with the new size and the new list as the minor
+    return new SparseMatrix(newSize, newList);
   }
 
 
@@ -245,10 +246,8 @@ public class sparseMatrix implements SparseInterface {
       //grab the current node
       elem = (element)iter.next();
 
-      /* add the node's particular data items to the string and if it is not
-      the last node, add a new line */
-      temp += elem.getRow() + " " + elem.getCol() + " " + elem.getData();
-      if (iter.hasNext()) temp += "\n";
+      // /* add the node's particular data items to the string and add a new line */
+      temp += elem.getRow() + " " + elem.getCol() + " " + elem.getData() + "\n";
     }
 
     //return the string that we have been concatenating data on
