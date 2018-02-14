@@ -67,8 +67,21 @@ public class SparseMatrix implements SparseInterface {
     //remove the element, if it exists, from the list
     removeElement(row, col);
 
-    //add the element to the list
-    list.add(new element(row, col, data));
+    //find where the element should be placed
+    int i = 0;
+
+    for (element elem : list) {
+
+      if (elem.getRow() < row) i++;
+
+      else if (elem.getRow() == row) {
+
+        if (elem.getCol() < col) i++;
+      }
+    }
+
+    //place the element in sorted order
+    list.add(i, new element(row, col, data));
   }
 
 
