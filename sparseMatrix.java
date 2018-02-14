@@ -125,6 +125,7 @@ public class SparseMatrix implements SparseInterface {
 
       //if the either the row or the column weren't valid arguments, print the message and return with no element added
       System.out.println(e.toString());
+      return 0;
     }
 
     //utilize the overridden Object equals method and the list indexOf method to determine if the element is present in the list.
@@ -178,6 +179,7 @@ public class SparseMatrix implements SparseInterface {
 
       //if the either the row or the column weren't valid arguments, print the message and return with no element added
       System.out.println(e.toString());
+      return null;
     }
 
     //the size of the new matrix is one less than the current matrix
