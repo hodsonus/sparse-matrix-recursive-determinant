@@ -52,8 +52,6 @@ public class SparseMatrix implements SparseInterface {
   @Override
   public void addElement(int row, int col, int data) {
 
-    if (data == 0) return;
-
     //check to see if the row and column are valid arguments
     try {
 
@@ -68,6 +66,9 @@ public class SparseMatrix implements SparseInterface {
 
     //remove the element, if it exists, from the list
     removeElement(row, col);
+
+    //if the data of the element we want to add is 0, then don't allocate memory for it.
+    if (data == 0) return;
 
     //find where the element should be placed
     int i = 0;
