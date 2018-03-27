@@ -52,6 +52,8 @@ public class SparseMatrix implements SparseInterface {
   @Override
   public void addElement(int row, int col, int data) {
 
+    if (data == 0) return;
+
     //check to see if the row and column are valid arguments
     try {
 
