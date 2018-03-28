@@ -44,5 +44,32 @@ public class Test {
         System.out.println("The (1,1) element of the minor is 4: " + (myMinor.getElement(1, 1) == 4));
 
         myTest.clear();
+
+        //Additional tests start here.
+
+        myTest.addElement(0, 0, 0);
+
+        correctString = "";
+
+        //Because we are not storing 0 values in the matrix the toString should reflect an "empty" (all 0) matrix.
+        System.out.println("toString is correct: " + correctString.equals(myTest.toString()));
+
+        myTest.addElement(0, 1, 3);
+
+        myTest.addElement(0, 1, 0);
+
+        correctString = "";
+
+        //Note that adding 0 to the matrix overwrites the data at that position to 0 as defined in the interface description
+        //Because we are not storing 0 values, we can remove the element at that position.
+        System.out.println("toString is correct: " + correctString.equals(myTest.toString()));
+
+        myTest.addElement(0, 0, 16);
+        myTest.addElement(0, 1, 4);
+        myTest.addElement(1, 1, 9);
+        myTest.addElement(2, 2, 7);
+
+        System.out.println("The determinant is 1008: " + (myTest.determinant() == 1008));
+
     }
 }
